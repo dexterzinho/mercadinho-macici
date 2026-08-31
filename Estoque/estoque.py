@@ -27,13 +27,13 @@ def cadastrar():
     # 2. Coleta os dados do novo produto
     nome = input('Digite o nome do produto que você deseja cadastrar: ')
     try:
-        valor = float(input('Digite o valor do produto: '))
+        quantidade = int(input('Digite a quantidade do produto: '))
     except ValueError:
-        print("Erro: O valor deve ser um número válido.")
+        print("Erro: A quantidade deve ser um número válido.")
         return
 
     # 3. Adiciona o novo produto à lista existente
-    produtos.append({'nome': nome, 'valor': valor})
+    produtos.append({'nome': nome, 'quantidade': quantidade})
     
     
     with open(ARQUIVO_ESTOQUE, 'w', encoding='utf-8') as arquivo:
